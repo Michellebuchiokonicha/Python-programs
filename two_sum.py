@@ -12,7 +12,6 @@
 # print(two_sum([1, 2, 3, 4, 5, 6], 3), 'memme')
 
 
-
 def two_sum_fast(nums: list[int], target: int) -> tuple[int, int] | None:
     """0(n) version: one pass, remembering each value's index in a dict."""
     seen: dict[int, int] = {}
@@ -23,18 +22,23 @@ def two_sum_fast(nums: list[int], target: int) -> tuple[int, int] | None:
         seen[num] = i
 
     return None
+
+
 print(two_sum_fast([1, 2, 3, 4, 5, 6], 3))
 print(two_sum_fast([3, 3], 6))
 print(two_sum_fast([3], 6))
 print(two_sum_fast([1, 5], 2))
 print(two_sum_fast([], 5))
-print(two_sum_fast([-1,4,2], 3))
+print(two_sum_fast([-1, 4, 2], 3))
 
 assert two_sum_fast([1, 2, 3, 4, 5, 6], 3) == (0, 1)
-assert two_sum_fast([3, 3], 6) == (0, 1), "duplicates: must not pair an element with itself"
+assert two_sum_fast([3, 3], 6) == (0, 1), (
+    "duplicates: must not pair an element with itself"
+)
 assert two_sum_fast([3], 6) == None, "duplicates: must not pair an element with itself"
-assert two_sum_fast([1, 5], 2) == None, "duplicates: must not pair an element with itself"
-assert two_sum_fast([-1, 4, 2], 3) == (0, 1), "duplicates: must not pair an element with itself"
-
-
-
+assert two_sum_fast([1, 5], 2) == None, (
+    "duplicates: must not pair an element with itself"
+)
+assert two_sum_fast([-1, 4, 2], 3) == (0, 1), (
+    "duplicates: must not pair an element with itself"
+)

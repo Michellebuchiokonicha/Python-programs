@@ -12,7 +12,7 @@ def group_anagram(words: list[str]) -> list:
             groups[label] = [word]
         else:
             groups[label].append(word)
-        
+
     return list(groups.values())
 
 

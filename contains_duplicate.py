@@ -17,7 +17,8 @@ def contains_duplicate(nums: list[int]) -> bool:
 
 # def contains_duplicate_size(nums: list[int]) -> bool:
 #     """Same answer as contains_duplicate: set() drops repeats, so a smaller set means a duplicate."""
-    # return len(set(nums)) != len(nums)
+# return len(set(nums)) != len(nums)
+
 
 def contains_duplicate_size(nums: list[int]) -> bool:
     """Same answer as contains_duplicate: set() drops repeats, so a smaller set means a duplicate."""

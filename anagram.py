@@ -1,4 +1,4 @@
-def anagram(s: str, t:str) -> bool:
+def anagram(s: str, t: str) -> bool:
     if len(s) != len(t):
         return False
     s_count = {}
@@ -27,10 +27,9 @@ def count_letters(text: str) -> dict[str, int]:
         else:
             counts[letter] += 1
     return counts
-            
 
 
-def anagram_hel(s: str, t:str) -> bool:
+def anagram_hel(s: str, t: str) -> bool:
     """Return True if t is an anagram of s, ignoring case."""
     if len(s) != len(t):
         return False
@@ -45,4 +44,6 @@ for fn in (anagram, anagram_hel):
     assert fn("rat", "car") is False, f"{fn.__name__}: Different letters gives False"
     assert fn("", "") is True, f"{fn.__name__}: empty gives True"
     assert fn("a", "ab") is False, f"{fn.__name__}: different word length gives False"
-    assert fn("anAgram", "nagaram") is True, f"{fn.__name__}: same letter count gives True"
+    assert fn("anAgram", "nagaram") is True, (
+        f"{fn.__name__}: same letter count gives True"
+    )
