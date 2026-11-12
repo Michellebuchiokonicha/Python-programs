@@ -12,16 +12,18 @@
 def valid_palindrome(pal: str) -> bool:
     left = 0
     right = len(pal) - 1    # so that it is the exact indexes and not more
-    new_pal = pal.lower()
-    print(left, new_pal[left], new_pal[right])
-    while left <= right:
-        if new_pal[left] == new_pal[right]:
+    while left < right:
+        if not pal[left].isalnum():
             left += 1
+            continue
+        if not pal[right].isalnum():
             right -= 1
-        else:
-            if left == right/2:
-                return True
-        return False
+            continue
+        if pal[left].lower() != pal[right].lower():
+            return False
+        left += 1
+        right -= 1
+    return True
 
 
 print(valid_palindrome("A man, a plan, a canal: Panama"))
