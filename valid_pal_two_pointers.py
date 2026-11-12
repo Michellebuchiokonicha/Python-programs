@@ -1,0 +1,27 @@
+# I think 0 and the full length of the pal since its the end. minus 1
+# so we need to check that if you reverse it, it will be thesame. I think you compare the last and the first
+#  you compare the second to the last(-1,-2) and the second (1,2), then continue doing it.
+# where to stop. if you get to the middle and you are able to compare, then its a palindrome, but if not able to compare and that is the last word, stop. it means its a palindrome
+# if s[left] is not alnum, skip, continue, or even filter initially so the comparison is betweeon only alnum. we'd see
+# I think left moves +1, right moves -1. since it will take it more into the string 
+# if it finishes without a mismatch, return True. but at anypoint you see mismatch, stop and return false.
+# ab left = 0, right = 2-1=1 at index 0, it is a, at index 1, it is b so no match, == false
+# aba at index 0, its a, at index 2, its a. good. then at index 1, it is b(middle), at index 1 for right, it is b(middle) so they match. True
+
+
+def valid_palindrome(pal: str) -> bool:
+    left = 0
+    right = len(pal) - 1    # so that it is the exact indexes and not more
+    new_pal = pal.lower()
+    print(left, new_pal[left], new_pal[right])
+    while left <= right:
+        if new_pal[left] == new_pal[right]:
+            left += 1
+            right -= 1
+        else:
+            if left == right/2:
+                return True
+        return False
+
+
+print(valid_palindrome("A man, a plan, a canal: Panama"))
