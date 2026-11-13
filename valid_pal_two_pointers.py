@@ -26,4 +26,4 @@ def valid_palindrome(pal: str) -> bool:
     return True
 
 
-print(valid_palindrome("A man, a plan, a canal: Panama"))
+assert valid_palindrome("A man, a plan, a canal: Panama") is True, "Classical Palindrome"
