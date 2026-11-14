@@ -8,7 +8,6 @@ def valid_palindrome(phrase: str) -> bool:
     return cleaned == cleaned[::-1]
 
 
-
 # approach 2
 # two pointers
 
